@@ -1,8 +1,16 @@
+import React from "react";
+import Header from "./components/Header";
+import DefaultPlaces from "./components/DefaultPlaces";
+import TodayWeather from "./components/TodayWeather";
+import WeeeklyWeather from "./components/WeeeklyWeather";
 
 function App() {
   return (
     <div>
-      <h1>Weather app</h1>
+      <Header/>
+      <DefaultPlaces/>
+      <TodayWeather/>
+      <WeeeklyWeather/>
     </div>
   );
 }

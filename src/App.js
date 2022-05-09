@@ -25,8 +25,14 @@ function App() {
     <div>
       {forecast && <Header headerName={currentLocation.name} />}
 
-      {forecast && <TodayWeather location={currentLocation} weather={forecast.daily[0]} />}
-      {forecast && <WeeeklyWeather weeklyWeather={forecast.daily} />}
+      {forecast &&
+        <div className="w-full py-[10rem] px-4">
+          <div className="max-w-[1240px] mx-auto gap-8">
+            <TodayWeather location={currentLocation} weather={forecast.daily[0]} />
+            <WeeeklyWeather weeklyWeather={forecast.daily} />
+          </div>
+        </div>
+      }
 
       <CitySelector selectorChanged={selectorChanged} />
 

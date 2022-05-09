@@ -9,7 +9,7 @@ const WeeeklyWeather = ({ weeklyWeather, timezone }) => {
       {weeklyWeather.length > 5 &&
         weeklyWeather.slice(1, 6).map((weather) => {
           return (
-            <div className="p-6 mx-auto inline-block shadow-x rounded-lg" key={weather.dt}>
+            <div className="p-6 mx-auto inline-block shadow-x rounded-lg min" key={weather.dt}>
               <div>
                 <img
                   src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}

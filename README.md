@@ -29,6 +29,6 @@ npm run start
 
 This command will transpile the nodejs app and make a production build of the react app and serve it on 3000 port
 
-5. Go to http://localhost:8080
+5. Go to http://localhost:3000
 
 ### Running the tests

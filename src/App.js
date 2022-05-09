@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./components/Header";
 import CitySelector from "./components/CitySelector";
 import TodayWeather from "./components/TodayWeather";
@@ -6,30 +6,29 @@ import WeeeklyWeather from "./components/WeeeklyWeather";
 
 import useForecast from "./hooks/useForecast";
 
-
 function App() {
   const { forecast, submitRequest, getWeatherCurrentLocation, currentLocation } = useForecast();
 
+  useEffect(() => {
+    console.log("use effect");
+    getWeatherCurrentLocation();
+  }, [])
 
-  if (!forecast) {
-    //getWeatherCurrentLocation();
-  }
+
 
   const selectorChanged = value => {
     submitRequest(value);
   };
-
-
 
   return (
     <div>
       {forecast && <Header headerName={currentLocation.name} />}
 
       {forecast &&
-        <div className="w-full py-[10rem] px-4">
-          <div className="max-w-[1240px] mx-auto gap-8">
-            <TodayWeather location={currentLocation} weather={forecast.daily[0]} />
-            <WeeeklyWeather weeklyWeather={forecast.daily} />
+        <div className="w-full px-4 py-8">
+          <div className="max-w-[1200px] mx-auto gap-8 bg-white rounded-xl flex items-center h-72">
+            <TodayWeather location={currentLocation} weather={forecast.daily[0]} current={forecast.current} />
+            <WeeeklyWeather weeklyWeather={forecast.daily} timezone={forecast.timezone} />
           </div>
         </div>
       }

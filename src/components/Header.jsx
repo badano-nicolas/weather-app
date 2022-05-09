@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Header = ({headerName}) => {
-    
+const Header = () => {
+
     return (
         <div className='max-w-[800px] w-full mx-auto text-center flex flex-col'>
-            <h1 className='w-full text-3xl font-bold text-[#00df9a]'>El tiempo en {headerName}</h1>
+            <h1 className='w-full text-3xl font-bold text-[#00df9a]'>Servicio meteorológico</h1>
         </div>
     )
 

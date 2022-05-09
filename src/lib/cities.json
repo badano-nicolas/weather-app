@@ -1,0 +1,53 @@
+[
+    {
+        "id": 3430988,
+        "name": "Luján",
+        "state": "",
+        "country": "AR",
+        "coord": {
+            "lon": -59.105,
+            "lat": -34.570278
+        }
+    },
+    {
+        "id": 3433955,
+        "name": "Ciudad Autónoma de Buenos Aires",
+        "state": "",
+        "country": "AR",
+        "coord": {
+            "lon": -58.450001,
+            "lat": -34.599998
+        }
+    },
+    {
+        "id": 3860259,
+        "name": "Córdoba",
+        "state": "",
+        "country": "AR",
+        "coord": {
+            "lon": -64.181053,
+            "lat": -31.4135
+        }
+    },
+    {
+        "id": 3838233,
+        "name": "Salta",
+        "state": "",
+        "country": "AR",
+        "coord": {
+            "lon": -65.411659,
+            "lat": -24.7859
+        }
+    },
+    {
+        "id": 3833367,
+        "name": "Ushuaia",
+        "state": "",
+        "country": "AR",
+        "coord": {
+            "lon": -68.300003,
+            "lat": -54.799999
+        }
+    }
+
+]

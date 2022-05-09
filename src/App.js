@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import Header from "./components/Header";
 import CitySelector from "./components/CitySelector";
 import TodayWeather from "./components/TodayWeather";

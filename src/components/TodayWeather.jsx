@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const TodayWeather = ({ location, weather, current }) => {
   return (
     <div className='col-start-1 col-end-2 inline-block'>

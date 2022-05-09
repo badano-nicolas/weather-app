@@ -1,8 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import CitySelector from "./components/CitySelector";
-import TodayWeather from "./components/TodayWeather";
-import WeeeklyWeather from "./components/WeeeklyWeather";
+import Forecast from "./components/Forecast";
 
 import useForecast from "./hooks/useForecast";
 
@@ -14,16 +13,17 @@ function App() {
   const selectorChanged = value => {
     submitRequest(value);
   };
+  
 
+  console.log(forecast);
   return (
     <div>
-      <Header />
-      <TodayWeather />
-      <TodayWeather />
+      {forecast && <Header headerName={forecast.name}/>}
+
+      {forecast && <Forecast forecastData={forecast}/>}
+
       <CitySelector selectorChanged={selectorChanged}/>
       
- 
-      <WeeeklyWeather />
     </div>
   );
 }

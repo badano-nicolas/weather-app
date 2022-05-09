@@ -10,13 +10,13 @@
         }
     },
     {
-        "id": 3433955,
-        "name": "Ciudad Autónoma de Buenos Aires",
+        "id": 3435910,
+        "name": "Buenos Aires",
         "state": "",
         "country": "AR",
         "coord": {
-            "lon": -58.450001,
-            "lat": -34.599998
+            "lon": -58.3772,
+            "lat": -34.6132
         }
     },
     {

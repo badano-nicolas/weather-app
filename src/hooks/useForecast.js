@@ -8,18 +8,17 @@ const useForecast = () => {
 
     const getWeather = async ( lat, lon ) => {
         const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`
-        return axios(url)
+        return axios(url);
     };
 
 
     const submitRequest = async location => {
-        console.log(location);
 
         getWeather(location.coord.lat, location.coord.lon)
         .then((res) => {
-            console.log(res.data);
+            setForecast(res.data);
         }).catch((error) => {
-            
+
             console.log(error);
         } )
 
@@ -28,7 +27,7 @@ const useForecast = () => {
     return {
         isError,
         forecast,
-        submitRequest,
+        submitRequest
     };
 };
 

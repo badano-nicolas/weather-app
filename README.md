@@ -2,13 +2,11 @@
 
 Weather app written as code challenge using React.
 
-## Deploy
-- [Versel](https://weather-app-gamma-coral.vercel.app/)
-
+## Getting Started
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Getting Started
-https://weather-app-gamma-coral.vercel.app/
+## Deploy
+- [Versel](https://weather-app-gamma-coral.vercel.app/)
 
 ### Installing
 

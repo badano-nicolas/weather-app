@@ -19,16 +19,18 @@ cd weather-app
 npm install && cd client/ && npm install
 ```
 
-3. Go .env file and set up your [OpenWEather](https://home.openweathermap.org/) API KEY as show below:
-REACT_APP_OPENWEATHER_API_KEY=HERE_GOES_API_KEY
+3. Go '.env.sample' and rename it to '.env' file.
 
-4. Build and run the aplication
+5. Set up your [OpenWEather](https://home.openweathermap.org/) API KEY as show below:
+```
+REACT_APP_OPENWEATHER_API_KEY=HERE_GOES_API_KEY
+```
+
+5. Build and run the aplication
 ```
 npm run start
 ```
 
 This command will transpile the nodejs app and make a production build of the react app and serve it on 3000 port
 
-5. Go to http://localhost:3000
-
-### Running the tests
+6. Go to http://localhost:3000

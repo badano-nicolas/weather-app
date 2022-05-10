@@ -41,17 +41,13 @@ const useForecast = () => {
 
 
     const submitRequest = async location => {
-
         setCurrentLocation(location);
         getWeather(location.coord.lat, location.coord.lon)
             .then((res) => {
-                console.log('submit request ', res);
                 setForecast(res.data);
             }).catch((error) => {
-
                 console.log(error);
             })
-
     };
 
     return {

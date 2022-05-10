@@ -36,9 +36,10 @@ const WeeeklyWeather = ({ weeklyWeather, timezone }) => {
                 />
               </div>
               <div className="text-xl font-semibold text-black">{translateDay(moment.unix(weather.dt).tz(timezone).format("dddd"))}</div>
-              <h5 class="hidden mt-4 text-xl font-semibold text-black lg:block"></h5>
-              <p className="text-slate-500">Min: {weather.temp.min.toFixed(0)}&deg;C</p>
-              <p className="text-slate-500">Max: {weather.temp.max.toFixed(0)}&deg;C</p>
+              <div>
+                <p className="text-slate-500">Min: {weather.temp.min.toFixed(0)}&deg;C</p>
+                <p className="text-slate-500">Max: {weather.temp.max.toFixed(0)}&deg;C</p>
+              </div>
             </div>
           );
         })}

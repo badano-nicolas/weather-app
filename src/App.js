@@ -10,7 +10,6 @@ function App() {
   const { forecast, submitRequest, getWeatherCurrentLocation, currentLocation } = useForecast();
 
   useEffect(() => {
-    console.log("use effect");
     getWeatherCurrentLocation();
   }, [])
 
@@ -26,7 +25,7 @@ function App() {
 
       {forecast &&
         <div className="w-full px-4 py-8">
-          <div className="max-w-[1200px] mx-auto gap-8 bg-white rounded-xl flex items-center h-72">
+          <div className="max-w-[1200px] mx-auto gap-8 bg-white rounded-xl flex items-center">
             <TodayWeather location={currentLocation} weather={forecast.daily[0]} current={forecast.current} />
             <WeeeklyWeather weeklyWeather={forecast.daily} timezone={forecast.timezone} />
           </div>

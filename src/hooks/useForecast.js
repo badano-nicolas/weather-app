@@ -4,6 +4,7 @@ import axios from 'axios';
 const useForecast = () => {
     const [forecast, setForecast] = useState(null);
     const [currentLocation, setCurrentLocation] = useState(null);
+    const [searchingLocation, setSearchingLocation] = useState(false)
 
     // Get wether
     const getWeather = async (lat, lon) => {
@@ -35,8 +36,12 @@ const useForecast = () => {
 
     // Get current location, parse response, get weather
     const getWeatherCurrentLocation = async () => {
-        const currentLocation = await getParsedLocation();
-        submitRequest(currentLocation);
+        if (!searchingLocation) {
+            console.log("searchng location")
+            setSearchingLocation(true);
+            const currentLocation = await getParsedLocation();
+            submitRequest(currentLocation);
+        }
     }
 
 

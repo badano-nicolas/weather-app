@@ -11,7 +11,7 @@ function App() {
 
   useEffect(() => {
     getWeatherCurrentLocation();
-  }, [])
+  }, [getWeatherCurrentLocation])
 
 
 

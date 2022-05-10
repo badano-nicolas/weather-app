@@ -5,7 +5,7 @@ const TodayWeather = ({ location, weather, current }) => {
     <div className='w-1/4 bg-zinc-200 rounded-xl'>
       <div className="p-5 mx-auto" key={weather.dt}>
         <div className="shrink-0">
-          <img className='bg-slate-300 rounded-full'
+          <img className='bg-slate-700 rounded-full'
             src={`https://openweathermap.org/img/wn/${weather.weather[0].icon}@2x.png`}
             alt="Weather Icon"
           />

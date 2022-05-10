@@ -43,7 +43,12 @@ const useForecast = () => {
         getWeather(location.coord.lat, location.coord.lon)
             .then((weather) => {
                 setForecast(weather.data);
-                parseAndSetLocation(location, weather.data.timezone)
+                if (!currentLocation) {
+                    parseAndSetLocation(location, weather.data.timezone);
+                }
+                else {
+                    setCurrentLocation(location);
+                }
             }).catch((error) => {
                 console.log(error);
             });

@@ -11,7 +11,9 @@ function App() {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((position) => {
-      getWeatherCurrentLocation(position)
+      if (position) {
+        getWeatherCurrentLocation(position)
+      }
     })
 
   }, [getWeatherCurrentLocation])
@@ -22,11 +24,11 @@ function App() {
 
   return (
     <div>
-      {forecast && <Header headerName={currentLocation.name} />}
+      <Header />
 
       {forecast &&
-        <div className="w-full px-4 py-8">
-          <div className="max-w-[1200px] mx-auto gap-8 bg-white rounded-xl flex items-center">
+        <div className="w-full px-4 py-8 e-block">
+          <div className="max-w-[1200px] mx-auto bg-white rounded-xl flex">
             <TodayWeather location={currentLocation} weather={forecast.daily[0]} current={forecast.current} />
             <WeeeklyWeather weeklyWeather={forecast.daily} timezone={forecast.timezone} />
           </div>

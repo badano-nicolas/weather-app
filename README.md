@@ -34,3 +34,16 @@ npm run start
 This command will transpile the nodejs app and make a production build of the react app and serve it on 3000 port
 
 6. Go to http://localhost:3000
+
+
+## Notes
+- Installed tailwind to makes the styling more easy and learn.
+- Installed react-select to handle the city list.
+- Installed axios to call the weather api.
+- Installed moment-timezone to calculate the day with timezone and timestamp.
+
+
+
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)

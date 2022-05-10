@@ -10,10 +10,11 @@ function App() {
   const { forecast, submitRequest, getWeatherCurrentLocation, currentLocation } = useForecast();
 
   useEffect(() => {
-    getWeatherCurrentLocation();
+    navigator.geolocation.getCurrentPosition((position) => {
+      getWeatherCurrentLocation(position)
+    })
+
   }, [getWeatherCurrentLocation])
-
-
 
   const selectorChanged = value => {
     submitRequest(value);

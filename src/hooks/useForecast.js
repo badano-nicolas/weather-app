@@ -6,53 +6,47 @@ const useForecast = () => {
     const [currentLocation, setCurrentLocation] = useState(null);
     const [searchingLocation, setSearchingLocation] = useState(false)
 
-    // Get wether
+    // Get onecall
     const getWeather = async (lat, lon) => {
         const url = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}&units=metric`
         return axios(url);
     };
 
-    // Get current location
-    const getLocation = async () => {
-        const url = "http://ip-api.com/json";
-        return axios(url);
-    }
-
     // Parse response to location format
-    const getParsedLocation = async () => {
-        const locationInfo = await getLocation();
-        const location = {
-            "id": 0,
-            "name": locationInfo.data.city,
-            "state": "",
-            "country": locationInfo.data.countryCode,
+    const getParsedLocation = (location) => {
+        const parsedLocation = {
             "coord": {
-                "lon": locationInfo.data.lon,
-                "lat": locationInfo.data.lat
+                "lon": location.coords.longitude,
+                "lat": location.coords.latitude
             }
         }
-        return location;
+        return parsedLocation;
     }
 
     // Get current location, parse response, get weather
-    const getWeatherCurrentLocation = async () => {
+    const getWeatherCurrentLocation = (position) => {
         if (!searchingLocation) {
-            console.log("searchng location")
             setSearchingLocation(true);
-            const currentLocation = await getParsedLocation();
-            submitRequest(currentLocation);
+            submitRequest(getParsedLocation(position));
         }
+    }
+
+    const parseAndSetLocation = (location, timezone) => {
+        const timezoneArray = timezone.split('/')
+        location.country = timezoneArray[1].slice(0, 2).toUpperCase();
+        location.name = timezoneArray[2].replace('_', ' ');
+        setCurrentLocation(location);
     }
 
 
     const submitRequest = async location => {
-        setCurrentLocation(location);
         getWeather(location.coord.lat, location.coord.lon)
-            .then((res) => {
-                setForecast(res.data);
+            .then((weather) => {
+                setForecast(weather.data);
+                parseAndSetLocation(location, weather.data.timezone)
             }).catch((error) => {
                 console.log(error);
-            })
+            });
     };
 
     return {

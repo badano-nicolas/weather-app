@@ -12,7 +12,7 @@ These instructions will get you a copy of the project up and running on your loc
 
 1. Clone this repository
 ```
-git clone https://github.com/damjtoh/weather-widget.git
+git clone https://github.com/badano-nicolas/weather-app.git
 cd weather-app
 ```
 
